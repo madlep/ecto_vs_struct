@@ -1,0 +1,2 @@
+defmodule EctoVsStruct do
+end
