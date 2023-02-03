@@ -1,0 +1,48 @@
+Operating System: macOS
+CPU Information: Apple M1 Pro
+Number of Available Cores: 8
+Available memory: 16 GB
+Elixir 1.14.3
+Erlang 25.2.1
+
+Benchmark suite executing with the following configuration:
+warmup: 10 s
+time: 10 s
+memory time: 10 s
+reduction time: 10 s
+parallel: 1
+inputs: standard
+Estimated total run time: 2 min
+
+Benchmarking ecto with input standard ...
+Benchmarking plain struct with input standard ...
+Benchmarking struct minimal with input standard ...
+
+##### With input standard #####
+Name                     ips        average  deviation         median         99th %
+struct minimal        5.61 M      178.32 ns ±15056.59%         125 ns         208 ns
+plain struct          2.56 M      391.29 ns ±11181.40%         250 ns         375 ns
+ecto                 0.148 M     6737.59 ns   ±481.72%        5666 ns       20334 ns
+
+Comparison:
+struct minimal        5.61 M
+plain struct          2.56 M - 2.19x slower +212.96 ns
+ecto                 0.148 M - 37.78x slower +6559.27 ns
+
+Memory usage statistics:
+
+Name              Memory usage
+struct minimal           488 B
+plain struct             768 B - 1.57x memory usage +280 B
+ecto                   17728 B - 36.33x memory usage +17240 B
+
+**All measurements for memory usage were the same**
+
+Reduction count statistics:
+
+Name           Reduction count
+struct minimal              13
+plain struct                48 - 3.69x reduction count +35
+ecto                      1503 - 115.62x reduction count +1490
+
+**All measurements for reduction count were the same**
